@@ -1,0 +1,39 @@
+<div class="flex space-x-8">
+
+  <div *ngIf="state=='init'" class="w-92 flex flex-col shadow-2xl rounded-large overflow-hidden">
+    <img src="assets/images/card1.jpg">
+    <div class="bg-white h-80 flex flex-col items-center text-center py-6">
+      <div class="w-64 text-center text-orange text-lg font-bold mb-2">"On ne savait pas<br>que j'allais grandir..."</div>
+      <div class="text-border text-blue/50 text-xs">Balto, 2 ans</div>
+      <div class="text-center flex space-x-4 pt-12">
+        <button (click)="changeState('pretexte')" class="border border-border/25 circle multi-line text-blue text-xs p-5">C'est un<br>prétexte !</button>
+        <button (click)="changeState('justifie')" class="border border-border/25 circle multi-line text-blue text-xs p-5">C'est<br>justifié !</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="state=='justifie'" class="w-92 flex flex-col shadow-2xl rounded-large overflow-hidden">
+    <img src="assets/images/card1.jpg">
+    <div class="bg-blue h-80 flex flex-col items-center text-center py-6">
+      <div class="w-64 text-center text-white text-lg font-bold mb-2">"On ne savait pas<br>que j'allais grandir..."</div>
+      <div class="bg-card-cross bg-center bg-no-repeat text-center text-white text-lg font-light px-12 pt-6">
+        Il est très tentant de craquer sur une petite boule de poils, mais il faut, bien sûr, ne pas oublier qu'elle va
+        grandir rapidement et bien se renseigner sur sa taille à l'âge adulte...
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="state=='pretexte'" class="w-92 flex flex-col shadow-2xl rounded-large overflow-hidden">
+    <img src="assets/images/card1.jpg">
+    <div class="bg-white h-80 flex flex-col items-center text-center py-6">
+      <div class="w-64 text-center text-orange text-lg font-bold mb-2">"On ne savait pas<br>que j'allais grandir..."</div>
+      <div class="text-border text-blue/50 text-xs">Balto, 2 ans</div>
+      <div class="flex items-center bg-card-heart bg-center bg-no-repeat grow px-12 pt-6">
+        <div class="text-center text-white uppercase text-xl font-bold mb-10">
+          nous sommes<br>d'accord !
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

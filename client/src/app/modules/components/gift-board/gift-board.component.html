@@ -1,0 +1,19 @@
+<div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
+  <div *ngIf="gifts.length>=4" class="rotate-90 flex items-center pt-6 mb-5">
+    <app-gift-badge [gift]="gifts[0]" class="-rotate-180"></app-gift-badge>
+    <div class="hidden md:block vdivider bg-blue/25 mx-5 mb-6"></div>
+    <app-gift-badge [gift]="gifts[1]" class="-rotate-180"></app-gift-badge>
+    <div class="hidden md:block vdivider bg-blue/25 mx-5 mb-6"></div>
+    <app-gift-badge [gift]="gifts[2]" class="-rotate-180"></app-gift-badge>
+    <div class="hidden md:block vdivider bg-blue/25 mx-5 mb-6"></div>
+    <app-gift-badge [gift]="gifts[3]" class="-rotate-180"></app-gift-badge>
+  </div>
+  <div *ngIf="dataService.giftSelected.value" class="text-blue text-lg font-medium mb-7">
+    {{dataService.giftSelected.value.text}}
+  </div>
+  <a target="_blank" *ngIf="dataService.giftSelected.value" [href]="dataService.giftSelected.value.url.replace('XX00',dataService.selectedAmount.value ? dataService.selectedAmount.value*100 : 'XX00')" class="bg-orange text-white font-bold uppercase rounded-full px-16 py-5 mt-4 mb-8">
+    <span class="text-2xl tracking-tighter mr-4">je donne</span>
+    <i class="fa-solid fa-heart"></i>
+  </a>
+  <img src="assets/images/don-en-confiance.svg" class="self-start">
+</div>

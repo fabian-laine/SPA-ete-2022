@@ -1,0 +1,64 @@
+.circle-position {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 85px;
+  height: 85px;
+}
+
+svg {
+  filter: drop-shadow(0px 0px 20px rgb(0 0 0 / 0.16));
+}
+
+.option {
+  width:25px;
+  height:25px;
+  margin-top:70px;
+}
+
+.by-month{
+  font-size: .75rem;
+}
+
+input, input:focus, {
+  background: none;
+  width:65px;
+  border:none;
+  outline: none;
+  text-align: right;
+  padding: 0;
+  height:36px;
+  color:white;
+  font-weight: 700;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+  font-weight: 700;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  text-align: center;
+  font-weight: 700;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  text-align: center;
+  font-weight: 700;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

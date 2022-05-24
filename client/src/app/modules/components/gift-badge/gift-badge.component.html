@@ -1,0 +1,31 @@
+<div *ngIf="gift" class="relative flex flex-col items-center">
+  <svg width="111" height="178" viewBox="0 0 111 178" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-1" [class.opacity-0]="gift.id!=dataService.giftSelected.value?.id">
+    <path d="M55.369 0C70.0538 0 84.1371 5.8335 94.5208 16.2172C104.904 26.6009 110.738 40.6842 110.738 55.369V122.394C110.738 152.973 57.208 178.079 55.369 177.763C53.53 177.447 0 152.974 0 122.394V55.369C0 40.6842 5.8335 26.6009 16.2172 16.2172C26.6009 5.8335 40.6842 0 55.369 0V0Z" fill="#275D6D"/>
+  </svg>
+  <div class="absolute flex flex-col items-center">
+    <div *ngIf="gift.image"
+         [class.opacity-0]="gift.id!=dataService.giftSelected.value?.id"
+         class="circle-position bg-cover bg-center bg-no-repeat rounded-full rotate-90 md:rotate-0" [style.background-image]="'url('+gift.image+')'">
+    </div>
+    <div *ngIf="gift.id!=dataService.giftSelected.value?.id" class="flex justify-center absolute">
+      <div (click)="selectThis()" class="cursor-pointer option rounded-full bg-blue/5 border border-blue/25 "></div>
+    </div>
+    <div *ngIf="gift.id==dataService.giftSelected.value?.id && gift.amount" [class]="gift.tx ? 'text-white/75 text-4xl font-bold mb-0 leading-none rotate-90 md:rotate-0' : 'text-white text-4xl font-bold mb-0 leading-none rotate-90 md:rotate-0'">
+      <div *ngIf="!gift.tx">{{gift.amount}}<span class="text-white">€</span><p class="by-month mb-0" *ngIf="gift.choice=='year'">par mois</p></div>
+      <div *ngIf="gift.tx" class="border-b flex">
+        <form *ngIf="selectedAmountFormGroup" [formGroup]="selectedAmountFormGroup">
+          <input type="number" formControlName="selectedAmount" placeholder="000" min="0" max="999" (focusin)="showEuro=false" (focusout)="showEuro=true">
+        </form>
+        <div *ngIf="showEuro" class="text-white">€</div>
+      </div>
+    </div>
+    <div (click)="selectThis()" *ngIf="gift.id!=dataService.giftSelected.value?.id && gift.amount && !gift.tx" class="cursor-pointer text-blue/50 text-4xl font-bold leading-none">
+      {{gift.amount}}€<p class="by-month mb-0" *ngIf="gift.choice=='year'">par mois</p>
+    </div>
+    <div (click)="selectThis()" *ngIf="gift.id!=dataService.giftSelected.value?.id && gift.amount && gift.tx" class="cursor-pointer text-blue/50 text-sm uppercase font-bold leading-tight">
+      montant<br>libre
+    </div>
+  </div>
+  <div *ngIf="gift.amountAfter" [class.opacity-0]="gift.id!=dataService.giftSelected.value?.id" class="text-blue/75 rotate-90 md:rotate-0"><span class="text-orange font-bold">{{gift.amountAfter}} € </span>après<br>réduction fiscale</div>
+  <div *ngIf="gift.tx" [class.opacity-0]="gift.id!=dataService.giftSelected.value?.id" class="text-blue/75"><span class="text-orange font-bold">{{dataService.selectedAmount.value*gift.tx|currency:'EUR':'symbol':'2.2-2'}} </span>après<br>réduction fiscale</div>
+</div>

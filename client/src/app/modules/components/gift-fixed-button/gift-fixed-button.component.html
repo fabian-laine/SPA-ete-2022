@@ -1,0 +1,70 @@
+<div class="hidden md:block fixed bottom-0 top-position md:right-0">
+  <div class="flex md:mb-10">
+    <button (click)="toggleChoice()" class="flex btn-height">
+      <div class="h-48 md:h-full bg-orange text-white uppercase text-lg md:text-2xl tracking-tighter font-bold rounded-r-xl vertical-text px-4 md:px-7">
+        Je donne
+        <i class="fa-solid fa-heart fa-rotate-90 md:fa-rotate-180 pb-1"></i>
+      </div>
+    </button>
+    <div [class.hidden]="!dataService.isChoiceOpen.value" class="flex btn-height flex-col justify-center -rotate-90 md:rotate-0 text-center bg-orange px-8 drop-shadow-lg">
+      <button (click)="select('summer')"
+              class="text-lg md:text-xl uppercase font-bold rounded-full px-12 py-3 md:px-16 md:py-6 mb-2"
+              [class.text-orange]="dataService.choice.value=='summer'"
+              [class.text-white]="dataService.choice.value!='summer'"
+              [class.bg-white]="dataService.choice.value=='summer'"
+              [class.bg-orange]="dataService.choice.value!='summer'">pour l'été
+      </button>
+      <button (click)="select('year')"
+              class="text-white text-lg md:text-xl uppercase font-bold rounded-full px-12 py-3 md:px-16 md:py-6"
+              [class.text-orange]="dataService.choice.value=='year'"
+              [class.text-white]="dataService.choice.value!='year'"
+              [class.bg-white]="dataService.choice.value=='year'"
+              [class.bg-orange]="dataService.choice.value!='year'">toute l'année
+      </button>
+    </div>
+  </div>
+  <div class="hidden md:flex md:flex-col md:items-end pr-5 space-y-2">
+    <a href="https://www.facebook.com/sharer.php?u=https://lp.la-spa.fr/stopabandon" target="_blank" class="fa-stack">
+      <i class="fa-solid fa-circle fa-stack-2x text-facebook"></i>
+      <i class="fa-brands fa-facebook-f fa-stack-1x text-white"></i>
+    </a>
+    <a
+      href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flp.la-spa.fr%2Fstopabandon%20&text=Balto,%20Sherlock,%20Avalanche%E2%80%A6%20Si%20vous%20saviez%20pourquoi%20ils%20ont%20%C3%A9t%C3%A9%20abandonn%C3%A9s%20!%20Ces%20pr%C3%A9textes%20%C3%A0%20l%E2%80%99abandon%20vous%20r%C3%A9voltent-ils%20autant%20que%20nous%20?&hashtags=stopabandon%20@SPA_Officiel"
+      target="_blank" class="fa-stack">
+      <i class="fa-solid fa-circle fa-stack-2x text-twitter"></i>
+      <i class="fa-brands fa-twitter fa-stack-1x fa-inverse"></i>
+    </a>
+    <a
+      href="https://api.whatsapp.com/send?text=Cet%20%C3%A9t%C3%A9,%20combats%20les%20id%C3%A9es%20re%C3%A7ues%20pour%20venir%20%C3%A0%20bout%20de%20toutes%20les%20formes%20d%27abandons%20!%20https%3A%2F%2Flp.la-spa.fr/stopabandon&data-action=%27share/WhatsApp/share"
+      target="_blank" class="fa-stack">
+      <i class="fa-solid fa-circle fa-stack-2x text-whatsapp"></i>
+      <i class="fa-solid fa-phone fa-stack-1x fa-inverse"></i>
+    </a>
+  </div>
+</div>
+
+<div class="md:hidden fixed bottom-0 w-full flex justify-center">
+  <div class="btn-width">
+    <button (click)="toggleChoice()" class="bg-orange text-white uppercase text-lg tracking-tighter font-bold rounded-t-xl w-full py-4">
+      Je donne <i class="fa-solid fa-heart pb-1 ml-1"></i>
+    </button>
+    <div [class.hidden]="!dataService.isChoiceOpen.value" class="flex btn-height flex-col justify-center text-center bg-orange drop-shadow-lg px-4 pb-4">
+      <button (click)="select('summer')"
+              class="text-lg uppercase font-bold rounded-full px-4 py-2 mb-3"
+              [class.text-orange]="dataService.choice.value=='summer'"
+              [class.text-white]="dataService.choice.value!='summer'"
+              [class.bg-white]="dataService.choice.value=='summer'"
+              [class.bg-orange]="dataService.choice.value!='summer'">pour l'été
+      </button>
+      <button (click)="select('year')"
+              class="text-white text-lg uppercase font-bold rounded-full px-4 py-2 "
+              [class.text-orange]="dataService.choice.value=='year'"
+              [class.text-white]="dataService.choice.value!='year'"
+              [class.bg-white]="dataService.choice.value=='year'"
+              [class.bg-orange]="dataService.choice.value!='year'">toute l'année
+      </button>
+    </div>
+  </div>
+
+
+</div>

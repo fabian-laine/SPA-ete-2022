@@ -1,0 +1,12 @@
+.superimposed-left {
+  width:calc(50% + 7px);
+  margin-right: -7px;
+}
+.superimposed-right {
+  width:calc(50% + 7px);
+  margin-left: -7px;
+}
+
+.selected {
+  z-index:1000;
+}

@@ -1,0 +1,18 @@
+<div class="bg-why">
+  <div class="container mx-auto text-center px-6 md:px-12 md:px-40 py-16 md:py-24">
+    <div class="mb-12 md:mb-20">
+      <div class="text-4xl font-bebas text-blue font-medium uppercase leading-8 mb-2 md:mb-0">
+        <span class="text-orange">ces nombreux animaux sont rejetés</span><br>
+        comme de vulgaires accessoires
+      </div>
+      <div class="text-blue">Aidez-les à se reconstruire !</div>
+    </div>
+    <div class="mb-6 flex">
+      <button (click)="choice('summer')" [class]="dataService.choice.value=='summer' ? 'bg-white text-orange font-medium md:font-bold uppercase rounded-xl shadow-xl px-8 md:px-0 py-3 md:py-6 superimposed-left selected' : 'bg-blue/25 text-blue font-medium md:font-bold uppercase rounded-xl px-8 md:px-0 py-3 md:py-6 superimposed-left'">
+        je donne cet été</button>
+      <button (click)="choice('year')" [class]="dataService.choice.value=='year' ? 'bg-white text-orange font-medium md:font-bold uppercase rounded-xl shadow-xl px-6 md:px-0 py-3 md:py-6 superimposed-right selected' : 'bg-blue/25 text-blue font-medium md:font-bold uppercase rounded-xl px-6 md:px-0 py-3 md:py-6 superimposed-right'">
+        je donne toute l'année</button>
+    </div>
+    <app-gift-board></app-gift-board>
+  </div>
+</div>
