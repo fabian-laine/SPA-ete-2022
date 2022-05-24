@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="260.445" height="142.869" viewBox="0 0 260.445 142.869">
+  <defs>
+    <filter id="Tracé_2730" x="0" y="0" width="260.445" height="142.869" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Tracé_2730)">
+    <path id="Tracé_2730-2" data-name="Tracé 2730" d="M41.435,0A41.434,41.434,0,0,1,82.869,41.434V159.008c0,22.884-40.059,41.671-41.435,41.434S0,181.892,0,159.008V41.434A41.435,41.435,0,0,1,41.435,0Z" transform="translate(30 112.87) rotate(-90)" fill="#275d6d"/>
+  </g>
+</svg>
